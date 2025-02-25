@@ -1287,7 +1287,7 @@ void AllocateElementsArray::GenerateCode(MaglevAssembler* masm,
   RegisterSnapshot snapshot = register_snapshot();
   snapshot.live_registers.set(length);
 
-  // Return empty fixed array if lenght equal zero.
+  // Return empty fixed array if length equal zero.
   __ CompareInt32AndJumpIf(length, 0, kNotEqual, &allocate_elements,
                            Label::Distance::kNear);
   __ LoadRoot(elements, RootIndex::kEmptyFixedArray);
